@@ -10,7 +10,7 @@ import {
   signInWithGoogle,
   signOutUser,
   subscribeToAuth
-} from "./firebase-client.js?v=20261107-2";
+} from "./firebase-client.js?v=20261107-3";
 
 const PROJECTS_KEY = "mock-exam-hub:projects";
 const NOTES_KEY = "mock-exam-hub:notes";
@@ -588,3 +588,4 @@ function init() {
 }
 
 init();
+
