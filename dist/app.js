@@ -10,7 +10,7 @@ import {
   signInWithGoogle,
   signOutUser,
   subscribeToAuth
-} from "./firebase-client.js";
+} from "./firebase-client.js?v=20261107-2";
 
 const PROJECTS_KEY = "mock-exam-hub:projects";
 const NOTES_KEY = "mock-exam-hub:notes";
