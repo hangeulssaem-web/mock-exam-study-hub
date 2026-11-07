@@ -22,7 +22,7 @@
 
 ## 배포 전 미완료 사항
 
-- Firebase project `mock-exam-study-hub`와 웹 앱은 생성되었습니다. Firestore `asia-northeast3` Standard 인스턴스 프로비저닝, Google Provider, GitHub Pages 승인 도메인, Rules 배포·문법 검증은 아직 진행 중입니다. 규칙은 초안이며 활성화되기 전에 Firebase 도구로 검사해야 합니다.
+- Firebase project `mock-exam-study-hub`, 웹 앱, Firestore `asia-northeast3` Standard 인스턴스가 생성되었습니다. Firestore Rules는 Console에서 문법 검증을 통과해 게시했습니다. Google Provider는 OAuth 지원 이메일의 공개 여부를 사용자가 결정할 때까지 꺼 두었고, Pages 도메인 승인도 보류했습니다.
 - GitHub 인증은 연결되어 있으나 새 저장소 생성 기능은 연결 도구에 없고 로컬 GitHub CLI도 설치되어 있지 않습니다. 원격 저장소 생성, push, Pages 실행은 계정 브라우저 접근 후 완료해야 합니다.
 - 공개 저장소에는 코드와 EBS 표지 이미지가 포함됩니다. 이미지 출처 링크는 있지만 재배포 허가 여부는 별도 확인 대상입니다.
 - 이 파일과 화면 안내는 기능·보안 설명이며 정식 개인정보 처리방침이 아닙니다. 실제 공개 운영 전에는 운영자 식별·연락처와 개인정보 문의·삭제 절차를 확정해야 합니다.
