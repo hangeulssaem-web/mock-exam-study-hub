@@ -1,4 +1,4 @@
-import { firebaseConfig, googleSignInEnabled, isFirebaseConfigured } from "./firebase-config.js?v=20261107-2";
+import { firebaseConfig, googleSignInEnabled, isFirebaseConfigured } from "./firebase-config.js?v=20261107-3";
 
 const firebaseVersion = "13.2.0";
 
@@ -138,3 +138,4 @@ export async function migrateLocalNotes(uid, notes) {
   }
   return { importedCount: validNotes.length, skippedCount: invalidCount };
 }
+
