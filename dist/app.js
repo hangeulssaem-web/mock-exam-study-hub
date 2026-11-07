@@ -1,6 +1,7 @@
 import {
   addNote,
   firebaseConfigured,
+  firebaseGoogleSignInEnabled,
   firebaseReady,
   firebaseSdkUnavailable,
   loadNotes,
@@ -412,7 +413,9 @@ function updateAuthUI(user) {
   if (!firebaseReady) {
     authNotice.textContent = firebaseConfigured && firebaseSdkUnavailable
       ? "Firebase SDK를 불러오지 못했어요. 네트워크 연결과 브라우저의 외부 스크립트 차단 설정을 확인해 주세요."
-      : "Firebase 설정이 아직 연결되지 않았어요. README의 Firebase 연결 안내를 완료하면 Google 로그인이 활성화됩니다.";
+      : firebaseConfigured && !firebaseGoogleSignInEnabled
+        ? "Google 로그인은 Firebase Console에서 지원 이메일을 설정하고 로그인 제공자를 켠 뒤 활성화됩니다."
+        : "Firebase 설정이 아직 연결되지 않았어요. README의 Firebase 연결 안내를 완료하면 Google 로그인이 활성화됩니다.";
   } else if (!user) {
     authNotice.textContent = "Google 로그인 후 기록이 Firebase에 저장돼요. 본인 계정의 기록만 볼 수 있습니다. 아래 저장·개인정보 안내를 확인해 주세요.";
   } else {
