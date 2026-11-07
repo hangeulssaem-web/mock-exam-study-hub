@@ -7,7 +7,7 @@ export const firebaseConfig = {
   appId: "1:14994678019:web:5ca57744894a350f914936"
 };
 
-export const googleSignInEnabled = false;
+export const googleSignInEnabled = true;
 export const isFirebaseConfigured = [
   firebaseConfig.apiKey,
   firebaseConfig.authDomain,
