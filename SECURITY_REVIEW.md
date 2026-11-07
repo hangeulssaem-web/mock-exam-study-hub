@@ -1,6 +1,6 @@
 # 공개 배포 전 보안·개인정보 검토
 
-검토 범위: 현재 Git 추적 파일과 두 개의 저장소 커밋, 정적 앱 코드, 새 GitHub Pages workflow, Firebase 클라이언트 설정·Firestore 규칙 초안.
+검토 범위: 추적 파일과 저장소 커밋, 정적 앱 코드, GitHub Pages workflow, Firebase 클라이언트 설정·Firestore 규칙.
 
 ## 현재 확인
 
@@ -15,16 +15,15 @@
 ## 개인정보 흐름
 
 - Google 계정 인증은 Firebase Authentication이 처리합니다. 앱 화면에는 표시 이름만 사용하고 이메일을 Firestore 노트 필드에 저장하지 않습니다.
-- 노트는 `users/{uid}/notes/{noteId}` 아래에만 저장하고, 규칙 초안은 UID 소유자 외 접근을 거부합니다.
+- 노트는 `users/{uid}/notes/{noteId}` 아래에만 저장하고, 게시된 규칙은 UID 소유자 외 접근을 거부합니다.
 - 허브 프로그램 카드는 현재 브라우저의 `localStorage`에 남습니다. 기존 노트는 사용자가 옮기기 버튼을 선택하고 확인한 경우에만 Firebase로 전송합니다. 실패 시 원본을 지우지 않습니다.
 - 로그인 세션은 현재 탭에서만 유지되도록 구성했습니다. 노트는 사용자가 삭제할 때까지 보관되며, 한 건씩 앱에서 삭제할 수 있습니다.
 - 브라우저는 Google Fonts와 Firebase SDK의 공식 CDN에 연결됩니다. Firebase 설정이 비어 있으면 Firebase SDK를 불러오거나 노트 요청을 보내지 않습니다.
 
-## 배포 전 미완료 사항
+## 운영 상태와 남은 검토
 
-- Firebase project `mock-exam-study-hub`, 웹 앱, Firestore `asia-northeast3` Standard 인스턴스가 생성되었습니다. Firestore Rules는 Console에서 문법 검증을 통과해 게시했습니다. Google Provider는 OAuth 지원 이메일의 공개 여부를 사용자가 결정할 때까지 꺼 두었고, Pages 도메인 승인도 보류했습니다.
-- GitHub 인증은 연결되어 있으나 새 저장소 생성 기능은 연결 도구에 없고 로컬 GitHub CLI도 설치되어 있지 않습니다. 원격 저장소 생성, push, Pages 실행은 계정 브라우저 접근 후 완료해야 합니다.
-- 공개 저장소에는 코드와 EBS 표지 이미지가 포함됩니다. 이미지 출처 링크는 있지만 재배포 허가 여부는 별도 확인 대상입니다.
+- Firebase project `mock-exam-study-hub`, 웹 앱, Firestore `asia-northeast3` Standard 인스턴스가 생성되었습니다. Firestore Rules는 Console에서 게시했습니다. 사용자의 명시적 승인으로 Google Provider를 활성화하고 현재 지원 이메일을 공개 OAuth 연락처로 설정했으며, GitHub Pages 도메인을 승인 목록에 추가했습니다.
+- GitHub 저장소와 Pages 배포가 완료되었습니다. 코드와 표지 이미지는 공개 저장소와 사이트에서 제공됩니다. 이미지 출처 링크는 있지만 재배포 허가 여부는 별도 확인 대상입니다.
 - 이 파일과 화면 안내는 기능·보안 설명이며 정식 개인정보 처리방침이 아닙니다. 실제 공개 운영 전에는 운영자 식별·연락처와 개인정보 문의·삭제 절차를 확정해야 합니다.
 
 ## Firebase 기준 자료
