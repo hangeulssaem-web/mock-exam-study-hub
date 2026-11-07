@@ -1,4 +1,4 @@
-import { firebaseConfig, googleSignInEnabled, isFirebaseConfigured } from "./firebase-config.js";
+import { firebaseConfig, googleSignInEnabled, isFirebaseConfigured } from "./firebase-config.js?v=20261107-2";
 
 const firebaseVersion = "13.2.0";
 
