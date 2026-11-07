@@ -7,6 +7,10 @@ export const firebaseConfig = {
   appId: "1:14994678019:web:5ca57744894a350f914936"
 };
 
-export const isFirebaseConfigured = Object.values(firebaseConfig).every(value =>
-  typeof value === "string" && value.length > 0 && !value.startsWith("REPLACE_WITH_")
-);
+export const googleSignInEnabled = false;
+export const isFirebaseConfigured = [
+  firebaseConfig.apiKey,
+  firebaseConfig.authDomain,
+  firebaseConfig.projectId,
+  firebaseConfig.appId
+].every(value => typeof value === "string" && value.length > 0 && !value.startsWith("REPLACE_WITH_"));
