@@ -1,4 +1,4 @@
-import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js";
+import { firebaseConfig, googleSignInEnabled, isFirebaseConfigured } from "./firebase-config.js";
 
 const firebaseVersion = "13.2.0";
 
@@ -26,8 +26,9 @@ if (isFirebaseConfigured) {
   }
 }
 
-export const firebaseReady = Boolean(auth && db);
+export const firebaseReady = Boolean(auth && db && googleSignInEnabled);
 export const firebaseConfigured = isFirebaseConfigured;
+export const firebaseGoogleSignInEnabled = googleSignInEnabled;
 export const firebaseSdkUnavailable = firebaseSdkLoadError;
 
 export function signInWithGoogle() {
