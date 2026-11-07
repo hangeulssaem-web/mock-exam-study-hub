@@ -1,0 +1,13 @@
+# Local Firebase CLI state and credentials
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.env
+.env.*
+serviceAccount*.json
+firebase-adminsdk-*.json
+
+# Local project files
+node_modules/
+.superpowers/
